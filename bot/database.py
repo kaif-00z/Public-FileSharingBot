@@ -74,6 +74,10 @@ def get_stored_iteam(unique_id):
 
 def del_stored_iteam(unique_id):
     _ = eval(dB.get("STORE") or "{}")
+    _x = eval(dB.get("OWNERS_OF_ITEAMS") or "{}")
     if unique_id in _:
         _.pop(unique_id)
         dB.set("STORE", str(_))
+    if unique_id in _x:
+        _x.pop(unique_id)
+        dB.set("OWNERS_OF_ITEAMS", str(_x))
