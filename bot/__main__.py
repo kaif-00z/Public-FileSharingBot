@@ -16,6 +16,7 @@
 
 from . import *
 from .worker import *
+from .database import get_info_own_iteam
 
 bot.start(bot_token=Var.BOT_TOKEN)
 LOGS.info("Bot starting...")
