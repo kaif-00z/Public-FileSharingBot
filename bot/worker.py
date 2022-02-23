@@ -11,7 +11,7 @@
 #    General Public License for more details.
 #
 # License can be found in
-# <https://github.com/kaif-00z/FileSharingBot/blob/main/License> .
+# <https://github.com/kaif-00z/Public-FileSharingBot/blob/main/License> .
 
 
 from . import *
@@ -37,7 +37,7 @@ async def gen_link(event):
             "`Now send me Files/Messages one by one. After Sending All the Files/Message do `/done` .If you want to Cancel the Process do `/cancel` .`"
         )
         while True:
-            x = await cv.get_response()
+            x = await cv.get_response(timeout=60)
             if x.text.startswith("/cancel"):
                 return await x.reply("`Process Cancelled Successfully`")
             elif x.text.startswith("/done"):
